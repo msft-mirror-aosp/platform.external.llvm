@@ -489,7 +489,9 @@
 #define HAVE_SYS_WAIT_H 1
 
 /* Define if the setupterm() function is supported this platform. */
-/* #undef HAVE_TERMINFO */
+#ifndef __BIONIC__
+#define HAVE_TERMINFO 1
+#endif
 
 /* Define to 1 if you have the <termios.h> header file. */
 #define HAVE_TERMIOS_H 1
