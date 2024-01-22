@@ -37,10 +37,10 @@ var (
 	tblgenRule = pctx.StaticRule("tblgenRule", blueprint.RuleParams{
 		Depfile:     "${out}.d",
 		Deps:        blueprint.DepsGCC,
-		Command:     "${llvmTblgen} ${includes} ${genopt} -d ${depfile} -o ${out} ${in}",
+		Command:     "${llvmTblgen} ${includes} ${genopt} -d ${out}.d -o ${out} ${in}",
 		CommandDeps: []string{"${llvmTblgen}"},
 		Description: "LLVM TableGen $in => $out",
-	}, "includes", "depfile", "genopt")
+	}, "includes", "genopt")
 )
 
 type tblgenProperties struct {
