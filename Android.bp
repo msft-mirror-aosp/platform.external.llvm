@@ -70,6 +70,8 @@ llvm_defaults {
     // TODO(b/153609531): remove when no longer needed.
     native_bridge_supported: true,
 
+    cpp_std: "c++11",
+
     cflags: [
         "-D_GNU_SOURCE",
         "-D__STDC_LIMIT_MACROS",
@@ -84,6 +86,7 @@ llvm_defaults {
         "-Wno-maybe-uninitialized",
         "-Wno-missing-field-initializers",
         "-Wno-implicit-fallthrough",
+        "-Wno-deprecated-declarations",
         "-Wwrite-strings",
         "-Werror",
         "-Dsprintf=sprintf",
@@ -91,7 +94,6 @@ llvm_defaults {
 
     cppflags: [
         "-Wno-sign-promo",
-        "-std=c++11",
     ],
 
     tidy_checks: [
