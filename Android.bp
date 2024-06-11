@@ -72,6 +72,10 @@ llvm_defaults {
 
     cpp_std: "c++11",
 
+    // Optimize for size. It is only used by Renderscript, which is deprecated and is rarely
+    // used.
+    optimize_for_size: true,
+
     cflags: [
         "-D_GNU_SOURCE",
         "-D__STDC_LIMIT_MACROS",
