@@ -150,6 +150,7 @@ static char nuls[10];		/* place to point scanner in event of error */
 #else
 #define	DUPMAX	255
 #endif
+#undef INFINITY // Android-added: avoid collision with C23 <float.h> INFINITY (via <limits.h>)
 #define	INFINITY	(DUPMAX + 1)
 
 #ifndef NDEBUG
